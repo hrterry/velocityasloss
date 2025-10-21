@@ -1,0 +1,144 @@
+_wandb:
+    value:
+        cli_version: 0.22.2
+        e:
+            8xwgomtfknf3v04bxc5hch9u9o8kljdv:
+                codePath: stflow/app/flow/train.py
+                codePathLocal: stflow/app/flow/train.py
+                cpu_count: 32
+                cpu_count_logical: 64
+                cudaVersion: "12.2"
+                disk:
+                    /:
+                        total: "429496729600"
+                        used: "77406433280"
+                email: a2306125229@gmail.com
+                executable: /opt/miniconda3/envs/STFLOW/bin/python
+                gpu: NVIDIA GeForce RTX 4090
+                gpu_count: 2
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "25757220864"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-67376bdc-8468-8185-1ee5-4d57c6a54786
+                    - architecture: Ada
+                      cudaCores: 16384
+                      memoryTotal: "25757220864"
+                      name: NVIDIA GeForce RTX 4090
+                      uuid: GPU-45c48f2b-a5df-bd3d-5dc4-5fbbffa09730
+                host: 29322e6d984a
+                memory:
+                    total: "270128623616"
+                os: Linux-4.15.0-213-generic-x86_64-with-glibc2.31
+                program: /root/data1/STFlow-source/stflow/app/flow/train.py
+                python: CPython 3.10.18
+                root: /root/data1/STFlow-source
+                startedAt: "2025-10-14T08:37:12.272174Z"
+                writerId: 8xwgomtfknf3v04bxc5hch9u9o8kljdv
+        m: []
+        python_version: 3.10.18
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 63
+                - 77
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 53
+                - 63
+                - 77
+            "3":
+                - 2
+                - 13
+            "4": 3.10.18
+            "5": 0.22.2
+            "6": 4.57.0
+            "12": 0.22.2
+            "13": linux-x86_64
+activation:
+    value: swiglu
+attn_dropout:
+    value: 0.2
+backbone:
+    value: spatial_transformer
+batch_size:
+    value: 2
+clip_norm:
+    value: 1
+datasets:
+    value:
+        - READ
+device:
+    value: 0
+dropout:
+    value: 0.2
+embed_dataroot:
+    value: /root/data1/Reproduce/dataset/embed_dataroot
+epochs:
+    value: 100
+eval_step:
+    value: 1
+exp_code:
+    value: test
+feature_dim:
+    value: 1024
+feature_encoder:
+    value: uni_v1_official
+gene_list:
+    value: var_50genes.json
+hidden_dim:
+    value: 128
+loss_func:
+    value: mse
+lr:
+    value: 0.0005
+n_genes:
+    value: 50
+n_heads:
+    value: 4
+n_layers:
+    value: 4
+n_neighbors:
+    value: 8
+n_sample_steps:
+    value: 5
+norm:
+    value: layer
+normalize_method:
+    value: log1p
+num_workers:
+    value: 1
+pairwise_hidden_dim:
+    value: 128
+patch_distribution:
+    value: uniform
+prior_sampler:
+    value: zinb
+sample_times:
+    value: 10
+save_dir:
+    value: results_dir/
+save_step:
+    value: -1
+seed:
+    value: 1
+source_dataroot:
+    value: /root/data1/Reproduce/dataset/
+use_wandb:
+    value: true
+zinb_logits:
+    value: 0.1
+zinb_total_count:
+    value: 1
+zinb_zi_logits:
+    value: 0

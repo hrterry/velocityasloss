@@ -19,6 +19,18 @@ from stflow.app.flow.test import test
 from stflow.hest_utils.utils import save_pkl
 
 
+def json_default(o):
+    if isinstance(o, (np.integer,)):
+        return int(o)
+    if isinstance(o, (np.floating,)):
+        return float(o)
+    if isinstance(o, (np.bool_,)):
+        return bool(o)
+    if isinstance(o, np.ndarray):
+        return o.tolist()
+    return str(o)
+
+
 def main(args, split_id, train_sample_ids, test_sample_ids, val_save_dir, checkpoint_save_dir):
     normalize_method = get_normalize_method(args.normalize_method)
 
@@ -115,7 +127,7 @@ def main(args, split_id, train_sample_ids, test_sample_ids, val_save_dir, checkp
                 best_val_dict = val_perf_dict
                 for patch_name, dataset_res in val_perf_dict.items():
                     with open(os.path.join(val_save_dir, f'{patch_name}_results.json'), 'w') as f:
-                        json.dump(dataset_res, f, sort_keys=True, indent=4)
+                        json.dump(dataset_res, f, sort_keys=True, indent=4, default=json_default)
                 
                 # save_pkl(os.path.join(val_save_dir, 'inference_dump.pkl'), pred_dump)
                 early_stop_step = 0
@@ -170,18 +182,18 @@ def run(args):
         p_corrs = kfold_results['pearson_corrs']
         p_corrs = sorted(p_corrs, key=itemgetter('mean'), reverse=True)
         kfold_results['pearson_corrs'] = p_corrs
-        json.dump(kfold_results, f, sort_keys=True, indent=4)
+        json.dump(kfold_results, f, sort_keys=True, indent=4, default=json_default)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--seed', type=int, default=1)
-    parser.add_argument('--datasets', nargs='+', default=["all"], help="LUNG, READ, HCC")
-    parser.add_argument('--use_wandb', default=False)
-    parser.add_argument('--source_dataroot', default="/home/username/Anonymous_STFlow/dataset/")
-    parser.add_argument('--embed_dataroot', type=str, default="/home/username/Anonymous_STFlow/dataset/embed_dataroot")
+    parser.add_argument('--datasets', nargs='+', default=["READ"], help="LUNG, READ, HCC")
+    parser.add_argument('--use_wandb', default=True)
+    parser.add_argument('--source_dataroot', default="/root/data1/Reproduce/dataset/")
+    parser.add_argument('--embed_dataroot', type=str, default="/root/data1/Reproduce/dataset/embed_dataroot")
     parser.add_argument('--gene_list', type=str, default='var_50genes.json')
-    parser.add_argument('--save_dir', type=str, default="/home/username/Anonymous_STFlow/results_dir/")
+    parser.add_argument('--save_dir', type=str, default="results_dir/")
     parser.add_argument('--feature_encoder', type=str, default='uni_v1_official', help="uni_v1_official | resnet50_trunc | ciga | gigapath")
     parser.add_argument('--normalize_method', type=str, default="log1p")
     parser.add_argument('--exp_code', type=str, default="test")
@@ -244,7 +256,7 @@ if __name__ == '__main__':
     print(args)
 
     if args.datasets[0] == "all":
-        args.datasets = ["LUNG", "HCC", "COAD", "SKCM", "PAAD", "READ", "LYMPH_IDC", "PRAD", "IDC", "CCRCC"]
+        args.datasets = ["LUNG", "HCC", "COAD", "SKCM", "PAAD", "READ", "LYMPH_IDC", "PRAD", "CCRCC"]
 
     for dataset in args.datasets:
         args.dataset = dataset
@@ -252,7 +264,7 @@ if __name__ == '__main__':
         os.makedirs(args.save_dir, exist_ok=True)
 
         with open(os.path.join(args.save_dir, 'config.json'), 'w') as f:
-            json.dump(vars(args), f, sort_keys=True, indent=4)
+            json.dump(vars(args), f, sort_keys=True, indent=4, default=json_default)
 
         run(args)
 

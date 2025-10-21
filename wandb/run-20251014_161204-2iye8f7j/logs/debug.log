@@ -1,0 +1,94 @@
+2025-10-14 16:12:04,964 INFO    MainThread:20472 [wandb_setup.py:_flush():81] Current SDK version is 0.22.2
+2025-10-14 16:12:04,964 INFO    MainThread:20472 [wandb_setup.py:_flush():81] Configure stats pid to 20472
+2025-10-14 16:12:04,965 INFO    MainThread:20472 [wandb_setup.py:_flush():81] Loading settings from /root/.config/wandb/settings
+2025-10-14 16:12:04,965 INFO    MainThread:20472 [wandb_setup.py:_flush():81] Loading settings from /root/data1/STFlow-source/wandb/settings
+2025-10-14 16:12:04,965 INFO    MainThread:20472 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-10-14 16:12:04,965 INFO    MainThread:20472 [wandb_init.py:setup_run_log_directory():705] Logging user logs to /root/data1/STFlow-source/wandb/run-20251014_161204-2iye8f7j/logs/debug.log
+2025-10-14 16:12:04,965 INFO    MainThread:20472 [wandb_init.py:setup_run_log_directory():706] Logging internal logs to /root/data1/STFlow-source/wandb/run-20251014_161204-2iye8f7j/logs/debug-internal.log
+2025-10-14 16:12:04,965 INFO    MainThread:20472 [wandb_init.py:init():832] calling init triggers
+2025-10-14 16:12:04,965 INFO    MainThread:20472 [wandb_init.py:init():837] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-10-14 16:12:04,965 INFO    MainThread:20472 [wandb_init.py:init():880] starting backend
+2025-10-14 16:12:05,325 INFO    MainThread:20472 [wandb_init.py:init():883] sending inform_init request
+2025-10-14 16:12:05,330 INFO    MainThread:20472 [wandb_init.py:init():891] backend started and connected
+2025-10-14 16:12:05,333 INFO    MainThread:20472 [wandb_init.py:init():961] updated telemetry
+2025-10-14 16:12:05,335 INFO    MainThread:20472 [wandb_init.py:init():985] communicating run to backend with 90.0 second timeout
+2025-10-14 16:12:06,433 INFO    MainThread:20472 [wandb_init.py:init():1036] starting run threads in backend
+2025-10-14 16:12:07,239 INFO    MainThread:20472 [wandb_run.py:_console_start():2509] atexit reg
+2025-10-14 16:12:07,240 INFO    MainThread:20472 [wandb_run.py:_redirect():2357] redirect: wrap_raw
+2025-10-14 16:12:07,241 INFO    MainThread:20472 [wandb_run.py:_redirect():2426] Wrapping output streams.
+2025-10-14 16:12:07,242 INFO    MainThread:20472 [wandb_run.py:_redirect():2449] Redirects installed.
+2025-10-14 16:12:07,247 INFO    MainThread:20472 [wandb_init.py:init():1076] run started, returning control to user process
+2025-10-14 16:12:07,249 INFO    MainThread:20472 [wandb_run.py:_config_callback():1392] config_cb None None {'seed': 1, 'datasets': ['READ'], 'use_wandb': True, 'source_dataroot': '/root/data1/Reproduce/dataset/', 'embed_dataroot': '/root/data1/Reproduce/dataset/embed_dataroot', 'gene_list': 'var_50genes.json', 'save_dir': 'results_dir/', 'feature_encoder': 'uni_v1_official', 'normalize_method': 'log1p', 'exp_code': 'test', 'device': 0, 'sample_times': 10, 'batch_size': 2, 'lr': 0.0005, 'epochs': 100, 'clip_norm': 1.0, 'save_step': -1, 'eval_step': 1, 'num_workers': 1, 'loss_func': 'mse', 'patch_distribution': 'uniform', 'n_genes': 50, 'n_sample_steps': 5, 'prior_sampler': 'zinb', 'zinb_logits': 0.1, 'zinb_total_count': 1, 'zinb_zi_logits': 0.0, 'backbone': 'spatial_transformer', 'hidden_dim': 128, 'pairwise_hidden_dim': 128, 'n_layers': 4, 'dropout': 0.2, 'attn_dropout': 0.2, 'n_neighbors': 8, 'n_heads': 4, 'feature_dim': 1024, 'norm': 'layer', 'activation': 'swiglu'}
+2025-10-14 16:28:21,441 INFO    wandb-AsyncioManager-main:20472 [service_client.py:_forward_responses():80] Reached EOF.
+2025-10-14 16:28:21,442 INFO    wandb-AsyncioManager-main:20472 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.
+2025-10-14 16:29:50,425 ERROR   MainThread:20472 [redirect.py:_on_write():664] [all runs] error in stderr callback
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 2436, in <lambda>
+    lambda data: self._console_raw_callback("stderr", data),
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 399, in wrapper
+    return func(self, *args, **kwargs)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 457, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1595, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/interface/interface.py", line 802, in publish_output_raw
+    self._publish_output_raw(o)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/interface/interface_shared.py", line 37, in _publish_output_raw
+    self._publish(rec)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/interface/interface_sock.py", line 43, in _publish
+    self._asyncer.run(lambda: self._client.publish(request))
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/asyncio_manager.py", line 136, in run
+    return future.result()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+    return self.__get_result()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/asyncio_manager.py", line 219, in _wrap
+    return await fn()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/asyncio/streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/asyncio/streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2025-10-14 16:29:50,429 ERROR   MainThread:20472 [redirect.py:_on_write():664] [all runs] error in stderr callback
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 2436, in <lambda>
+    lambda data: self._console_raw_callback("stderr", data),
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 399, in wrapper
+    return func(self, *args, **kwargs)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 457, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1595, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/interface/interface.py", line 802, in publish_output_raw
+    self._publish_output_raw(o)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/interface/interface_shared.py", line 37, in _publish_output_raw
+    self._publish(rec)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/interface/interface_sock.py", line 43, in _publish
+    self._asyncer.run(lambda: self._client.publish(request))
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/asyncio_manager.py", line 136, in run
+    return future.result()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+    return self.__get_result()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/asyncio_manager.py", line 219, in _wrap
+    return await fn()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/asyncio/streams.py", line 371, in drain
+    await self._protocol._drain_helper()
+  File "/opt/miniconda3/envs/STFLOW/lib/python3.10/asyncio/streams.py", line 167, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost

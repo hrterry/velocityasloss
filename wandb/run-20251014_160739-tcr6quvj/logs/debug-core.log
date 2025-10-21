@@ -1,0 +1,12 @@
+{"time":"2025-10-14T16:07:40.144062701+08:00","level":"INFO","msg":"main: starting server","port-filename":"/tmp/tmpewu66vap/port-15711.txt","pid":15711,"log-level":0,"disable-analytics":false,"shutdown-on-parent-exit":false,"enable-dcgm-profiling":false}
+{"time":"2025-10-14T16:07:40.146983195+08:00","level":"INFO","msg":"server: will exit if parent process dies","ppid":15711}
+{"time":"2025-10-14T16:07:40.146870582+08:00","level":"INFO","msg":"server: accepting connections","addr":{"Name":"/tmp/wandb-15711-16189-428411426/socket","Net":"unix"}}
+{"time":"2025-10-14T16:07:40.339803367+08:00","level":"INFO","msg":"connection: ManageConnectionData: new connection created","id":"1(@)"}
+{"time":"2025-10-14T16:07:40.346974905+08:00","level":"INFO","msg":"handleInformInit: received","streamId":"tcr6quvj","id":"1(@)"}
+{"time":"2025-10-14T16:07:41.045725892+08:00","level":"INFO","msg":"handleInformInit: stream started","streamId":"tcr6quvj","id":"1(@)"}
+{"time":"2025-10-14T16:08:14.035715327+08:00","level":"INFO","msg":"handleInformTeardown: server teardown initiated","id":"1(@)"}
+{"time":"2025-10-14T16:08:14.035910525+08:00","level":"INFO","msg":"connection: closing","id":"1(@)"}
+{"time":"2025-10-14T16:08:14.03594505+08:00","level":"INFO","msg":"server is shutting down"}
+{"time":"2025-10-14T16:08:14.035961081+08:00","level":"INFO","msg":"connection: closed successfully","id":"1(@)"}
+{"time":"2025-10-14T16:08:14.036101344+08:00","level":"INFO","msg":"server: listener closed","addr":{"Name":"/tmp/wandb-15711-16189-428411426/socket","Net":"unix"}}
+{"time":"2025-10-14T16:11:24.349012636+08:00","level":"INFO","msg":"server: parent process exited, terminating service process"}

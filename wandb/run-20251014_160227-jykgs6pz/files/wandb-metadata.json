@@ -1,0 +1,43 @@
+{
+  "os": "Linux-4.15.0-213-generic-x86_64-with-glibc2.31",
+  "python": "CPython 3.10.18",
+  "startedAt": "2025-10-14T08:02:27.226928Z",
+  "program": "/root/data1/STFlow-source/stflow/app/flow/train.py",
+  "codePath": "stflow/app/flow/train.py",
+  "codePathLocal": "stflow/app/flow/train.py",
+  "email": "a2306125229@gmail.com",
+  "root": "/root/data1/STFlow-source",
+  "host": "29322e6d984a",
+  "executable": "/opt/miniconda3/envs/STFLOW/bin/python",
+  "cpu_count": 32,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "429496729600",
+      "used": "77406183424"
+    }
+  },
+  "memory": {
+    "total": "270128623616"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-67376bdc-8468-8185-1ee5-4d57c6a54786"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "memoryTotal": "25757220864",
+      "cudaCores": 16384,
+      "architecture": "Ada",
+      "uuid": "GPU-45c48f2b-a5df-bd3d-5dc4-5fbbffa09730"
+    }
+  ],
+  "cudaVersion": "12.2",
+  "writerId": "p7q1b5ks1q04o2pni9b8nyd8x085tar3"
+}

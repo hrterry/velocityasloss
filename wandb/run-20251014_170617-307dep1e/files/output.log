@@ -1,0 +1,12 @@
+Save dir: results_dir/test_uni_v1_official_spatial_transformer::25-10-14-17-06-16
+Namespace(seed=1, datasets=['READ'], use_wandb=True, source_dataroot='/root/data1/Reproduce/dataset/', embed_dataroot='/root/data1/Reproduce/dataset/embed_dataroot', gene_list='var_50genes.json', save_dir='results_dir/', feature_encoder='uni_v1_official', normalize_method='log1p', exp_code='test', device=0, sample_times=10, batch_size=2, lr=0.0005, epochs=100, clip_norm=1.0, save_step=-1, eval_step=1, num_workers=1, loss_func='mse', patch_distribution='uniform', n_genes=50, n_sample_steps=5, prior_sampler='gaussian', zinb_logits=0.1, zinb_total_count=1, zinb_zi_logits=0.0, backbone='spatial_transformer', hidden_dim=128, pairwise_hidden_dim=128, n_layers=4, dropout=0.2, attn_dropout=0.2, n_neighbors=8, n_heads=4, feature_dim=1024, norm='layer', activation='swiglu')
+Running dataset READ split 0
+Dataset Loading
+Training
+epoch: 47, avg_loss: 1.213:  46%|███████████████▋                  | 46/100 [11:36<13:37, 15.15s/it]
+Early stopping
+Running dataset READ split 1
+Dataset Loading
+Training
+epoch: 25, avg_loss: 1.164:  24%|████████▏                         | 24/100 [05:58<18:54, 14.92s/it]
+Early stopping
